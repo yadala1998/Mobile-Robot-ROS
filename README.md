@@ -12,10 +12,10 @@ Run Instructions:
 Hardware Information:
 
 All-Purpose:
-1. Raspberry Pi 3 (from anywhere)
-2. Raspberry Pi 3 Case (from anywhere – some cases that are not “official” are actually better)
-3. 32 GB microSD card (from anywhere but choose a good one)
-4. 2 Amp or higher micro-USB power supply (from anywhere): http://a.co/duacSCE
+1. Raspberry Pi 3 
+2. Raspberry Pi 3 Case 
+3. 32 GB microSD card 
+4. 2 Amp or higher micro-USB power supply 
 
 Mobile Robot:
 1. AlaMode (equiv. to Arduino Uno, but stacks on RasPi) (link on SeeedStudio.com)
