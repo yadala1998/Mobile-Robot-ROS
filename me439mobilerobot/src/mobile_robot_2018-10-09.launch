@@ -1,0 +1,14 @@
+<launch>
+  <rosparam command="load" file="$(find me439mobilerobot)/src/robot_info.yaml" />
+
+  <group ns="robot_operate">
+    <node pkg="me439mobilerobot" name="sensing_and_control_node" type="sensing_and_wheel_control_node_v02.py"/>
+    <node pkg="me439mobilerobot" name="sensors_processing_node" type="sensors_processing_v01.py"/>
+  </group>
+
+  <group ns="robot_control">
+    <node pkg="me439mobilerobot" name="set_desired_wheel_speeds" type="set_desired_wheel_speeds_v01.py"/>
+  </group>
+  
+  
+</launch>

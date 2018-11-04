@@ -1,0 +1,23 @@
+<launch>
+  <rosparam command="load" file="$(find me439mobilerobot)/src/robot_info.yaml" />
+
+  <group ns="robot_simulate">
+    <node pkg="me439mobilerobot" name="robot_simulator" type="mobile_robot_kinematic_simulator_v01.py"/>
+    <node pkg="me439mobilerobot" name="robot_animator" type="mobile_robot_animator_v00.py"/>
+  </group>
+
+  <group ns="robot_estimate">
+    <!-- In this group, launch the "dead_reckoning" node and another "animator" to draw where the robot thinks it is. -->
+    <!-- Use "remap" to make the animator subscribe to "/robot_pose_estimated" instead of "/robot_pose_simulate"  -->
+
+    <node pkg="me439mobilerobot" name="dead_reckoning" type="dead_reckoning_v01.py"/>
+    <remap from="/robot_pose_simulated" to="/robot_pose_estimated"/>
+    <node pkg="me439mobilerobot" name="dead_reckoning_animator" type="mobile_robot_animator_v00.py" />
+  </group>
+
+  <group ns="robot_control">
+    <node pkg="me439mobilerobot" name="set_desired_wheel_speeds" type="set_desired_wheel_speeds_v01.py"/>
+  </group>
+  
+  
+</launch>
